@@ -42,13 +42,10 @@ lines = assistant_content.split('\n')
 for line in lines:
     if line.startswith("촬영감독:"):
         scene_description = line.replace("촬영감독:", "").strip()
-        assistant_response.append(scene_description)
     elif line.startswith("음향감독:"):
         sound_description = line.replace("음향감독:", "").strip()
-        assistant_response.append(sound_description)
     elif line.startswith("작가:"):
         writer_notes = line.replace("작가:", "").strip()
-        assistant_response.append(writer_notes)
 
 
 for role in model_roles:
