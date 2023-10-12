@@ -1,5 +1,5 @@
 # GPT-3.5 API Key
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = "OpenAI API Key"
 
 # Custom Instructions for GPT-3.5
 INSTRUCTIONS_BY_ROLE = {
