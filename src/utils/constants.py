@@ -1,6 +1,3 @@
-# GPT-3.5 API Key
-OPENAI_API_KEY = "OpenAI API Key"
-
 # Custom Instructions for GPT-3.5
 INSTRUCTIONS_BY_ROLE = {
   "총감독": {
