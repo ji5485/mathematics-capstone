@@ -3,21 +3,17 @@ from roles.Director import Director
 from roles.Writer import Writer
 from roles.SoundDirector import SoundDirector
 from roles.Cinematographer import Cinematographer
-from models.hotshot import Hotshot
 
 requestId = initialize()
 
 # Roles
-director = Director()
-writer = Writer()
-sound_director = SoundDirector()
-cinematographer = Cinematographer()
-
-# Models
-hotshot = Hotshot(requestId)
+director = Director(requestId)
+writer = Writer(requestId)
+sound_director = SoundDirector(requestId)
+cinematographer = Cinematographer(requestId)
 
 def main():
-  director_chat = director.interact("광고의 주제는 '행복'입니다.")
+  director_chat = director.interact("광고의 주제는 '아이폰'입니다.")
   total_scene = director.get_total_scenes(director_chat)
 
   for scene_number in range(1, total_scene + 1):
@@ -44,8 +40,7 @@ def main():
       촬영 : {cinematographer.parse_scene(cinematographer_chat)}
     """)
 
-    # filename = hotshot.generate("Kids are playing in the park")
-    # print(filename)
+    cinematographer.create(cinematographer.parse_scene(cinematographer_chat))
 
     print(f"씬 {scene_number} 종료".center(100, "-") + "\n\n")
 

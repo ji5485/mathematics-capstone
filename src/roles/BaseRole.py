@@ -2,8 +2,9 @@ import openai
 from utils.constants import INSTRUCTIONS_BY_ROLE
 
 class Role:
-  def __init__(self, role):
+  def __init__(self, role, requestId):
     self.role = role
+    self.requestId = requestId
     self.system_instruction = INSTRUCTIONS_BY_ROLE[role].get('system', "")
     self.assistant_instruction = INSTRUCTIONS_BY_ROLE[role].get('assistant', "")
 

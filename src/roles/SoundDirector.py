@@ -2,8 +2,8 @@ from roles.BaseRole import Role
 
 # 음향감독 클래스
 class SoundDirector(Role):
-  def __init__(self):
-    super().__init__("음향감독")
+  def __init__(self, requestId):
+    super().__init__("음향감독", requestId)
 
   def parse_scene(self, messages):
     parsed = {}

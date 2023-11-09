@@ -3,8 +3,8 @@ from utils.constants import INSTRUCTIONS_BY_ROLE
 
 # 총감독 클래스
 class Director(Role):
-  def __init__(self):
-    super().__init__("총감독")
+  def __init__(self, requestId):
+    super().__init__("총감독", requestId)
     self.workers = [role for role in INSTRUCTIONS_BY_ROLE.keys() if role != "총감독"]
   
   # 컷 씬 개수 조회 메서드
