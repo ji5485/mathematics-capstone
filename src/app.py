@@ -4,6 +4,7 @@ from roles.Writer import Writer
 from roles.SoundDirector import SoundDirector
 from roles.Cinematographer import Cinematographer
 from models.TextToSpeech import TextToSpeech
+from models.TextToAudio import TextToAudio
 import os 
 
 initialize()
