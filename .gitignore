@@ -192,8 +192,9 @@ pyrightconfig.json
 .history
 .ionide
 
-# Artifacts
+# Artifacts / Results
 
 src/artifacts
+src/result
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode

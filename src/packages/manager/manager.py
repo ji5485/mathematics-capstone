@@ -18,7 +18,7 @@ class Manager:
   def register_scene_requirements(self, scene_number, requirements):
     self.requirements[scene_number] = requirements
 
-  def create_scene(self, scene_number):
+  def create_scene_artifacts(self, scene_number):
     directory = os.path.join(os.getcwd(), "src", "artifacts", self.request_id, f"scene-{scene_number}")
 
     if not os.path.exists(directory):
@@ -26,3 +26,5 @@ class Manager:
 
     for [key, worker] in self.workers.items():
       worker.create(self.requirements.get(scene_number).get(key), directory)
+
+    print(f"Scene {scene_number} created successfully!")
