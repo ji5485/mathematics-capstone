@@ -1,26 +1,22 @@
-from google.cloud import texttospeech
+# pip install gtts
+
+from gtts import gTTS
+from utils.utils import createSceneDirectory
 
 class TextToSpeech():
 
-    #나레이션 text-to-speech 하는 메서드
-    def text_to_speech(self,narration,scene_num):
-        
-        client = texttospeech.TextToSpeechClient()
+    # 나레이션 text-to-speech 파일 생성하는 메서드
+    def generate(narration):
 
-        sentence = self.narration
+        file_name = 'TTS.mp3'
 
-        synthesis_input = texttospeech.SynthesisInput(text=sentence)
-
-        voice = texttospeech.VoiceSelectionParams(
-        language_code="ko-KR", ssml_gender=texttospeech.SsmlVoiceGender.NEUTRAL
-        )
-        audio_config = texttospeech.AudioConfig(
-            audio_encoding=texttospeech.AudioEncoding.MP3
+        tts = gTTS(
+            text = narration,
+            lang = 'ko'
         )
 
-        response = client.synthesize_speech(
-        input=synthesis_input, voice=voice, audio_config=audio_config
-        )
-        
-        with open(f"컷{scene_num}", "wb") as out:
-            out.write(response.audio_content)
+        createSceneDirectory():
+        os.makedirs(f"{os.getcwd()}/TextToSpeech",exist_OK=True)
+        os.chdir('TextToSpeech')
+        tts.save(file_name)
+
