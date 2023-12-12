@@ -1,7 +1,7 @@
 import os
 import uuid
 from packages.roles import Writer, SoundDirector, Cinematographer
-from packages.models import DallE
+from packages.models import DallE, TTS
 
 class Manager:
   def __init__(self, num_of_scene):
@@ -10,7 +10,7 @@ class Manager:
     self.request_id = str(uuid.uuid4())
 
     self.workers = {
-      "writer": Writer(DallE()),
+      "writer": Writer(TTS()),
       "sound_director": SoundDirector(DallE()),
       "cinematographer": Cinematographer(DallE())
     }

@@ -39,6 +39,6 @@ class Writer(Role):
     if result.get("function") == "create":
       prompt = result.get('args').get('prompt')
       print(f"Narration : {prompt}")
-      return prompt
+      self.model.create(prompt, directory)
     else:
       raise Exception("Narration is not created.")
