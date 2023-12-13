@@ -1,4 +1,4 @@
-from .baes_role import Role
+from .base_role import Role
 
 instruction = """
   You're a cinematographer designed to take scenarios and produce visually excellent videos accordingly.
@@ -35,7 +35,7 @@ class Cinematographer(Role):
 
     if result.get("function") == "create":
       prompt = result.get('args').get('prompt')
-      print(f"Requirement of Cinema Content : {prompt}")
+      print(f"Cinema Content : {prompt}")
       self.model.create(prompt, directory)
     else:
       raise Exception("Advertising image is not created.")

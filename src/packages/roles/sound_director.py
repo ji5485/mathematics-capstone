@@ -1,4 +1,4 @@
-from .baes_role import Role
+from .base_role import Role
 
 instruction = """
   You are a sound director.
@@ -36,7 +36,7 @@ class SoundDirector(Role):
 
     if result.get("function") == "create":
       prompt = result.get('args').get('prompt')
-      print(f"Requirement of BGM : {prompt}")
-      return prompt
+      print(f"Background Music : {prompt}")
+      self.model.create(prompt, directory)
     else:
       raise Exception("Background music is not created.")

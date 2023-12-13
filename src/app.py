@@ -6,11 +6,11 @@ from packages.manager import Manager, Creator
 
 def main():
   director = Director()
-  number_of_scene = director.configure_advertisement("iPhone")
+  number_of_scene = director.configure_advertisement("Harvard University")
   manager = Manager(number_of_scene)
   creator = Creator(manager.request_id)
 
-  for scene_number in range(1, 4):
+  for scene_number in range(1, number_of_scene + 1):
     requirements = director.create_requirements_by_scene(scene_number)
     manager.register_scene_requirements(scene_number, requirements)
     manager.create_scene_artifacts(scene_number)

@@ -1,7 +1,7 @@
 import os
 import uuid
 from packages.roles import Writer, SoundDirector, Cinematographer
-from packages.models import DallE, TTS
+from packages.models import DallE, TTS, Audiocraft
 
 class Manager:
   def __init__(self, num_of_scene):
@@ -11,7 +11,7 @@ class Manager:
 
     self.workers = {
       "writer": Writer(TTS()),
-      "sound_director": SoundDirector(DallE()),
+      "sound_director": SoundDirector(Audiocraft()),
       "cinematographer": Cinematographer(DallE())
     }
 
@@ -27,4 +27,4 @@ class Manager:
     for [key, worker] in self.workers.items():
       worker.create(self.requirements.get(scene_number).get(key), directory)
 
-    print(f"Scene {scene_number} created successfully!")
+    print(f"Artifacts of scene {scene_number} created successfully!")

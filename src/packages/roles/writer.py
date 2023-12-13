@@ -1,4 +1,4 @@
-from .baes_role import Role
+from .base_role import Role
 
 instruction = """
   You are a writer who understands the main concepts and themes and develops stories and scenarios for advertising.
