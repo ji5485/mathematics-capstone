@@ -6,7 +6,7 @@ from packages.manager import Manager, Creator
 
 def main():
   director = Director()
-  number_of_scene = director.configure_advertisement("Harvard University")
+  number_of_scene = director.configure_advertisement("Department of Mathematics")
   manager = Manager(number_of_scene)
   creator = Creator(manager.request_id)
 

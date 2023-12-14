@@ -3,5 +3,5 @@ from .base_model import Model
 
 class TTS(Model):
   def create(self, prompt, directory):
-    tts = gTTS(text=prompt, lang="en")
-    tts.save(directory + "/narration.mp3")
+    result = gTTS(text=prompt, lang="en")
+    result.save(directory + "/narration.mp3")
