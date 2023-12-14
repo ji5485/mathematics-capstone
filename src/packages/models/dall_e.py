@@ -1,10 +1,11 @@
 import os
 from openai import OpenAI
 from requests import get
+from .base_model import Model
 
 api_key = os.environ.get("OPENAI_API_KEY")
 
-class DallE:
+class DallE(Model):
   def __init__(self):
     self.client = OpenAI(api_key=api_key)
   
